@@ -7,6 +7,7 @@ To find out the list of maintainers responsible for a particular kernel subsyste
 Make sure to mention the exact kernel branch and revision where the bug occured.
 Many kernel mailing lists reject HTML formatted messages, so use the plain text mode when sending the report.
 
+需要提供the reproducer (C source if possible, otherwise a syzkaller program) and the `.config` you used for your kernel.不能重现的可能不太会被修补
 Bugs without reproducers are way less likely to be triaged and fixed.
 If the bug is reproducible, include the reproducer (C source if possible, otherwise a syzkaller program) and the `.config` you used for your kernel.
 If the reprocucer is available only in the form of a syzkaller program, please link [the instructions on how to execute them](/docs/executing_syzkaller_programs.md) in your report.
@@ -14,8 +15,10 @@ Check that the reproducer works if you run it manually.
 Syzkaller tries to simplify the reproducer, but the result might not be ideal.
 You can try to simplify or annotate the reproducer manually, that greatly helps kernel developers to figure out why the bug occurs.
 
+要证书的话，需要理解bug并开发补丁，如果不行，可以提供自己的思考和结论
 If you want to get extra credit, you can try to undestand the bug and develop a fix yourself.
 If you can't figure out the right fix, but have some understanding of the bug, please add your thoughts and conclusions to the report, that will save some time for kernel developers.
+
 
 ## Reporting security bugs
 
