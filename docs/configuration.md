@@ -23,22 +23,22 @@ following keys in its top-level object:
    `-hda` option to `qemu-system-x86_64`.
  - `sshkey`: Location (on the host machine) of a root SSH identity to use for communicating with
    the virtual machine.
- - `sandbox` : Sandboxing mode, the following modes are supported:
-     - "none": don't do anything special (has false positives, e.g. due to killing init)
+ - `sandbox` : Sandboxing mode, the following modes are supported:不太懂
+     - "none": don't do anything special (has false positives, e.g. due to killing init)
      - "setuid": impersonate into user nobody (65534), default
      - "namespace": use namespaces to drop privileges
        (requires a kernel built with `CONFIG_NAMESPACES`, `CONFIG_UTS_NS`,
        `CONFIG_USER_NS`, `CONFIG_PID_NS` and `CONFIG_NET_NS`)
  - `enable_syscalls`: List of syscalls to test (optional).
  - `disable_syscalls`: List of system calls that should be treated as disabled (optional).
- - `suppressions`: List of regexps for known bugs.
+ - `suppressions`: List of regexps for known bugs.“抑制”：已知错误的正则表达式列表。
  - `type`: Type of virtual machine to use, e.g. `qemu` or `adb`.
  - `vm`: object with VM-type-specific parameters; for example, for `qemu` type paramters include:
      - `count`: Number of VMs to run in parallel.
      - `kernel`: Location of the `bzImage` file for the kernel to be tested;
        this is passed as the `-kernel` option to `qemu-system-x86_64`.
      - `cmdline`: Additional command line options for the booting kernel, for example `root=/dev/sda1`.
-     - `cpu`: Number of CPUs to simulate in the VM (*not currently used*).
-     - `mem`: Amount of memory (in MiB) for the VM; this is passed as the `-m` option to `qemu-system-x86_64`.
+     - `cpu`: Number of CPUs to simulate in the VM (*not currently used*).未用
+     - `mem`: Amount of memory (in MiB) for the VM; this is passed as the `-m` option to `qemu-system-x86_64`.
 
 See also [config.go](/syz-manager/mgrconfig/mgrconfig.go) for all config parameters.
